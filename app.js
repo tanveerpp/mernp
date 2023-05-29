@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const app = express();
 app.use(cors())
 const path = require("path");
-const port = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 async function conn()
@@ -100,6 +99,3 @@ app.delete("/product/:id",(req,res)=>{
     deletedata()
 })
 
-app.listen(port, ()=>{
-console.log(`App is listening on port ${port}`);
-});
